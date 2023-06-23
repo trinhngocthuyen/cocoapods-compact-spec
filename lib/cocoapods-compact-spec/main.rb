@@ -4,8 +4,8 @@ module Pod
   class Specification
     alias original_initialize initialize
 
-    def initialize(*args, &block)
-      original_initialize(*args, &block)
+    def initialize(*args, **kwargs, &block)
+      original_initialize(*args, **kwargs, &block)
       dsl_config = Pod::CompactSpecConfig.instance.dsl_config
       dsl_default = dsl_config[:default] || {}
       default = lambda do |key, value|
