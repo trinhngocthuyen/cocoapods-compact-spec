@@ -6,6 +6,17 @@
 
 A CocoaPods plugin to help define podspecs with minimal code.
 
+## Motivation
+
+When [declaring podspecs](https://guides.cocoapods.org/syntax/podspec.html), developers have to specify quite a lot of info. This comes with a great maintenance cost working with development pods. For example, if one wish to increase the deployment target of the project, he/she might have to modify accross development podspecs.
+
+This CocoaPods plugin offer a compact declaration of a spec. Something like this would suffice:
+```rb
+Pod::Spec.new do |s|
+  s.name = "ABC"
+end
+```
+
 ## Installation
 
 Via Bundler:
