@@ -1,11 +1,9 @@
 require_relative "dsl"
 
 module Pod
-  class Specification
-    alias original_initialize initialize
-
+  class CompactSpec < Specification
     def initialize(*args, **kwargs, &block)
-      original_initialize(*args, **kwargs, &block)
+      super
       dsl_config = Pod::CompactSpecConfig.instance.dsl_config
       dsl_default = dsl_config[:default] || {}
       default = lambda do |key, value|
