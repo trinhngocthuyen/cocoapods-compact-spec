@@ -7,7 +7,7 @@ module Pod
       dsl_config = Pod::CompactSpecConfig.instance.dsl_config
       dsl_default = dsl_config[:default] || {}
       default = lambda do |key, value|
-        send("#{key}=", dsl_default[key] || value) if attributes_hash[key].nil?
+        send("#{key}=", dsl_default[key] || value) unless attributes_hash.key?(key.to_s)
       end
 
       dummy_link = "https://github.com/dummy/link"
