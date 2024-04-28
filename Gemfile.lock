@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cocoapods-compact-spec (0.0.4)
+    cocoapods-compact-spec (0.0.5)
 
 GEM
   remote: https://rubygems.org/
